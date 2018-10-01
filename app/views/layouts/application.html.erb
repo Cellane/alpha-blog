@@ -28,13 +28,23 @@
     </nav>
   </header>
 
+  <% if flash.any? %>
+    <div class="container">
+      <% flash.each do |_, msg| %>
+      <div class="alert alert-primary" role="alert">
+        <%= msg %>
+      </div>
+      <% end %>
+    </div>
+  <% end %>
+
   <main class="container">
     <%= yield %>
   </main>
 
   <footer class="container">
     <div class="container bg-light text-center">
-      <span class="text-muted">Here's the footer.</span>
+      <span class="text-muted">&copy; 2018 Milan Vit</span>
     </div>
   </footer>
   </body>
