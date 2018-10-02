@@ -1,0 +1,23 @@
+#logo {
+  float: left;
+  // color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
+#logo:hover {
+  // color: #ffffff;
+  text-decoration: none;
+}
+
+.jumbotron#welcome {
+  background-image: image-url("header-image.jpg");
+  background-size: cover;
+}
+
+.jumbotron#welcome h1 {
+  color: #ffffff;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  letter-spacing: -1px;
+}

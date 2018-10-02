@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>AlphaBlog</title>
+    <title>Alpha blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -12,13 +12,15 @@
   </head>
 
   <body>
+  <div class="container">
   <%= render "layouts/header" %>
   <%= render "layouts/flash" %>
 
-  <main class="container my-3">
+  <main class="my-3">
     <%= yield %>
   </main>
 
   <%= render "layouts/footer" %>
+  </div>
   </body>
 </html>
