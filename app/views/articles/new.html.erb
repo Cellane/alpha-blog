@@ -1,17 +1,5 @@
 <h1>Create an article</h1>
 
-<% if @article.errors.any? %>
-  <div class="alert alert-danger">
-    <h4 class="alert-heading">The following errors prevented the article from getting created:</h4>
-
-    <ul>
-      <% @article.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
-
 <%= render "form" %>
 
 <p><%= link_to "Back", url_for(:back) %></p>
