@@ -2,11 +2,12 @@ class ArticlesController < ApplicationController
   before_action :set_article, only: [:edit, :show, :update, :destroy]
 
   def index
-    @articles = Article.all
+    @articles = Article.order(id: :desc)
   end
 
   def create
     @article = Article.new(article_params)
+    @article.user = User.first
 
     if @article.save
       flash[:notice] = "Article was successfully created."
