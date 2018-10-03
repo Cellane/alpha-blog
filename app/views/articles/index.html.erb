@@ -15,6 +15,14 @@
 
   <div class="row">
     <div class="col-sm-12">
+      <p>
+        <small>Written <%= time_ago_in_words(article.created_at) %> ago by <%= article.user.username %></small>
+      </p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12">
       <%= simple_format(truncate(article.description, length: 100)) %>
     </div>
   </div>
