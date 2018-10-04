@@ -3,7 +3,7 @@
     <div class="col-sm-9">
       <h2><%= link_to article.title, article_path(article.id) %></h2>
     </div>
-    <% if logged_in? && current_user == article.user %>
+    <% if logged_in? && (current_user == article.user || current_user.admin?) %>
       <div class="col-sm-3">
         <%= link_to "edit", edit_article_path(article.id), class: "btn btn-xs btn-primary" %>
         <%= link_to "delete", article_path(article.id), method: :delete,
