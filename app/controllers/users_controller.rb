@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:edit, :show, :update]
 
   def index
-    @users = User.all
+    @users = User.paginate(page: params[:page], per_page: 5)
   end
 
   def create
@@ -24,7 +24,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @articles = @user.articles.order(id: :desc)
+    @articles = @user.articles.order(id: :desc).paginate(page: params[:page], per_page: 3)
   end
 
   def update

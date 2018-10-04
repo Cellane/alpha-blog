@@ -1,3 +1,5 @@
 <h1>All articles</h1>
 
 <%= render "article", obj: @articles %>
+
+<%= will_paginate(@articles, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer) %>
