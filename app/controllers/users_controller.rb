@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   before_action :require_same_user, only: [:edit, :update]
 
   def index
-    @users = User.paginate(page: params[:page], per_page: 5)
+    @users = User.paginate(page: params[:page], per_page: 8)
   end
 
   def create
@@ -11,7 +11,8 @@ class UsersController < ApplicationController
 
     if @user.save
       flash[:success] = "Welcome to the Alpha Blog!"
-      redirect_to articles_path
+      session[:user_id] = @user.id
+      redirect_to user_path(@user.id)
     else
       render "new"
     end
