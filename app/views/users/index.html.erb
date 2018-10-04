@@ -1,0 +1,17 @@
+<h1>All bloggers</h1>
+
+<div class="row">
+  <% @users.each do |user| %>
+    <div class="col-md-3 col-xs-12">
+      <div class="card mb-3">
+        <%= gravatar_for user, size: 300, class: "card-img-top" %>
+
+        <div class="card-body">
+          <h5 class="card-title"><%= user.username %></h5>
+          <p class="card-text"><%= pluralize(user.articles.count, "article") %></p>
+          <%= link_to "View profile", user_path(user.id), class: "btn btn-primary" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

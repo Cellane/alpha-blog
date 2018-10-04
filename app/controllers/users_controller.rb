@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:edit, :show, :update]
 
+  def index
+    @users = User.all
+  end
+
   def create
     @user = User.new(user_params)
 
@@ -20,6 +24,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @articles = @user.articles.order(id: :desc)
   end
 
   def update

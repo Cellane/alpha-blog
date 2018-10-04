@@ -1,5 +1,9 @@
 <h1><%= @article.title %></h1>
 
+<p>
+  <small>Written <%= time_ago_in_words(@article.created_at) %> ago by <%= @article.user.username %></small>
+</p>
+
 <p><%= simple_format(@article.description) %></p>
 
 <div class="article-actions">

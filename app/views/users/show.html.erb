@@ -4,13 +4,11 @@
   <div class="col-md-10">
     <h2>Articles</h2>
 
-    <%= render "articles/article", obj: @user.articles %>
+    <%= render "articles/article", obj: @articles %>
   </div>
   <div class="col-md-2">
     <div class="float-right">
-      <%= gravatar_for @user, size: 150 %>
+      <%= gravatar_for @user, size: 150, class: "rounded-circle" %>
     </div>
   </div>
 </div>
-
-
