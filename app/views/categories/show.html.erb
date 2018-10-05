@@ -1,0 +1,6 @@
+<h1><%= @category.name %></h1>
+
+<%= render "articles/article", obj: @category_articles %>
+
+<%= will_paginate(@category_articles, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer) %>
+

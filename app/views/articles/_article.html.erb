@@ -26,4 +26,12 @@
       <%= simple_format(truncate(article.description, length: 100)) %>
     </div>
   </div>
+
+  <% if article.categories.any? %>
+    <div class="row">
+      <div class="col-sm-12">
+        <p>Filled under: <%= render article.categories %></p>
+      </div>
+    </div>
+  <% end %>
 <% end %>
