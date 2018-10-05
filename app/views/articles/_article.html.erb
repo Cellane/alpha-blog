@@ -4,11 +4,11 @@
       <h2><%= link_to article.title, article_path(article.id) %></h2>
     </div>
     <% if logged_in? && (current_user == article.user || current_user.admin?) %>
-      <div class="col-sm-3">
-        <%= link_to "edit", edit_article_path(article.id), class: "btn btn-xs btn-primary" %>
+      <div class="col-sm-3 mt-2 text-right">
+        <%= link_to "edit", edit_article_path(article.id), class: "btn btn-sm btn-primary" %>
         <%= link_to "delete", article_path(article.id), method: :delete,
                     data: {confirm: "Are you sure?"},
-                    class: "btn btn-xs btn-danger"%>
+                    class: "btn btn-sm btn-danger"%>
       </div>
     <% end %>
   </div>

@@ -1,4 +1,13 @@
-<h1><%= @category.name %></h1>
+<div class="row">
+  <div class="col-sm-9">
+    <h1><%= @category.name %></h1>
+  </div>
+  <% if logged_in? && current_user.admin? %>
+    <div class="col-sm-3 mt-2 text-right">
+      <%= link_to "edit", edit_category_path(@category.id), class: "btn btn-sm btn-primary" %>
+    </div>
+  <% end %>
+</div>
 
 <%= render "articles/article", obj: @category_articles %>
 
